@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jsako.mobilesafe"
+    android:installLocation="preferExternal"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.jsako.mobilesafe" />
+
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.jsako.mobilesafe.HomeActivity" />
+        <activity android:name="com.jsako.mobilesafe.SettingActivity" />
+        <activity android:name="com.jsako.mobilesafe.LostFindActivity" />
+        <activity android:name="com.jsako.mobilesafe.Setup1Activity" />
+        <activity android:name="com.jsako.mobilesafe.Setup2Activity" />
+        <activity android:name="com.jsako.mobilesafe.Setup3Activity" />
+        <activity android:name="com.jsako.mobilesafe.Setup4Activity" />
+        <activity android:name="com.jsako.mobilesafe.SelectContactActivity" />
+        <activity android:name="com.jsako.mobilesafe.OpenDeviceActivity" />
+        <activity android:name="com.jsako.mobilesafe.AtoolsActivity" />
+        <activity android:name="com.jsako.mobilesafe.NumberAddressQueryActivity" />
+        <activity android:name="com.jsako.mobilesafe.CallSmsSafeActivity" />
+        <activity android:name="com.jsako.mobilesafe.AppManagerActivity" />
+        <activity android:name="com.jsako.mobilesafe.TaskManagerActivity" />
+        <activity android:name="com.jsako.mobilesafe.TaskSetttingActivity" />
+        <activity
+            android:name="com.jsako.mobilesafe.EnterPSWActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance" />
+        <activity android:name="com.jsako.mobilesafe.TrafficManagerActivity" />
+        <activity
+            android:name="com.jsako.mobilesafe.AntiVirusActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+        <activity
+            android:name="com.jsako.mobilesafe.CleanCacheActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" />
+
+        <receiver android:name="com.jsako.mobilesafe.receiver.BootCompleteReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jsako.mobilesafe.receiver.SMSReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.jsako.mobilesafe.receiver.MyDeviceAdminReceiver"
+            android:permission="android.permission.BIND_DEVICE_ADMIN" >
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin_sample" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.jsako.mobilesafe.receiver.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/process_widget_provider" />
+        </receiver>
+        <receiver android:name="com.jsako.mobilesafe.receiver.KillAllReceiver" >
+            <intent-filter>
+                <action android:name="com.jsako.mobilesafe.killall" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.jsako.mobilesafe.service.GPSService" />
+        <service android:name="com.jsako.mobilesafe.service.AddressService" />
+        <service android:name="com.jsako.mobilesafe.service.CallSmsSafeService" />
+        <service android:name="com.jsako.mobilesafe.service.AutoCleanService" />
+        <service android:name="com.jsako.mobilesafe.service.UpdateWidgetService" />
+        <service android:name="com.jsako.mobilesafe.service.WatchDogService" />
+    </application>
+
+</manifest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="功能列表"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <com.jsako.mobilesafe.ui.FocusedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textSize="18sp"
+        android:text="手机卫士正在保护你手机的安全，哈哈哈，嘎嘎嘎     手机卫士正在保护你手机的安全，哈哈哈，嘎嘎嘎" />
+
+    <GridView
+        android:id="@+id/list_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="15dp"
+        android:numColumns="3"
+        android:verticalSpacing="10dp" />
+
+</LinearLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="高级工具"
+        android:textColor="#000000"
+        android:textSize="22sp" />
+
+    <TextView
+        style="@style/textview_content_atools"
+        android:onClick="numberQuery"
+        android:text="号码归属地查询" />
+    
+    <TextView
+        style="@style/textview_content_atools"
+        android:onClick="smsBackup"
+        android:text="短信的备份" />
+    
+    <TextView
+        style="@style/textview_content_atools"
+        android:onClick="smsRestore"
+        android:text="短信的还原" />
+
+</LinearLayout>

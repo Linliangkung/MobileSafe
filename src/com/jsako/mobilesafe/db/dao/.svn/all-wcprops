@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/MobileSafe/!svn/ver/6/src/com/jsako/mobilesafe/db/dao
+END
+NumberAddressQueryUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/MobileSafe/!svn/ver/6/src/com/jsako/mobilesafe/db/dao/NumberAddressQueryUtils.java
+END
+AntiVirusDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/MobileSafe/!svn/ver/12/src/com/jsako/mobilesafe/db/dao/AntiVirusDao.java
+END
+BlackNumberDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/MobileSafe/!svn/ver/8/src/com/jsako/mobilesafe/db/dao/BlackNumberDao.java
+END
+AppLockDao.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/MobileSafe/!svn/ver/11/src/com/jsako/mobilesafe/db/dao/AppLockDao.java
+END
